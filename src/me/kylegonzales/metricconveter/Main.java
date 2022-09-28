@@ -20,18 +20,23 @@ public class Main {
 				exit = true;
 				break;
 			}
-			if (strLength.length < 3 || strLength.length > 4) {
-				 System.out.printf("Your input is %s, which is not handled%nPlease try again", input);
-			} else if (strLength.length == 3) {
-				sourceNum = Float.parseFloat(strLength[0]);
-		        fromMetric = strLength[1];
-		        toMetric = strLength[2];
-			}  else {
-		        sourceNum = Float.parseFloat(strLength[0]);
-		        fromMetric = strLength[1];
-		        toMetric = strLength[3];
-		      }
-		      convert(sourceNum, fromMetric, toMetric);
+			try {
+				if (strLength.length < 3 || strLength.length > 4) {
+					 System.out.printf("Your input is %s, which is not handled%nPlease try again", input);
+				} else if (strLength.length == 3) {
+					sourceNum = Float.parseFloat(strLength[0]);
+			        fromMetric = strLength[1];
+			        toMetric = strLength[2];
+				}  else {
+			        sourceNum = Float.parseFloat(strLength[0]);
+			        fromMetric = strLength[1];
+			        toMetric = strLength[3];
+			      }
+			      convert(sourceNum, fromMetric, toMetric);
+			      scanner.close();	
+			} catch (Exception e) {
+				System.out.println("Something was inputted wrong, please try again.");
+			}
 		}
 	}
 	
@@ -46,7 +51,12 @@ public class Main {
 				targetNum = (float) (sourceNum * 2.2046);
 			}
 			break;
-			
+		case "o": //ounces to Grams
+			switch (toMetric) {
+			case "g":
+				targetNum = (float) (sourceNum /0.035274);
+			}
+			break;
 		case "c": // celcius to farenheight
 			switch (toMetric) {
 			case "f":
