@@ -23,7 +23,7 @@ public class Main {
 			}
 			try {
 				if (strLength.length < 3 || strLength.length > 4) {
-					 System.out.printf("Your input is %s, which is not handled%nPlease try again", input);
+					 System.out.printf("Your input is , which is not handled%n Please try again", input);
 				} else if (strLength.length == 3) {
 					sourceNum = Float.parseFloat(strLength[0]);
 			        fromMetric = strLength[1];
@@ -72,7 +72,9 @@ public class Main {
 			}
 			break;
 		}
+		System.out.println(" ");
 		System.out.printf("%.2f %s = %.2f %s%n", sourceNum, fromMetric, targetNum, toMetric);
+		System.out.println(" ");
 		return targetNum;
 	}
 }
