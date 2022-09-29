@@ -2,7 +2,7 @@ Welcome to metric converter!
 
 Please input your query. For example, 1 km = m. 
 
-Enter 'exit' or '-1' to exit the program"
+Enter 'exit' or to exit the program
 
 If a user input something that is not handled, you should print something to remind the user the valid input format, e.g.,
 
