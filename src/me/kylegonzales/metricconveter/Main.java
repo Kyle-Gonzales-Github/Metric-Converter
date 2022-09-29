@@ -7,8 +7,8 @@ public class Main {
 	private static boolean exit = false;
 	
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 		while (exit == false) {
-			Scanner scanner = new Scanner(System.in);
 			System.out.println("Welcome to the metric converter! For Example: 1 kg = g");
 			String input = scanner.nextLine();
 			String[] strLength = input.split(" ");
@@ -18,6 +18,7 @@ public class Main {
 			if (input.equals("exit")) {
 				System.out.println("You have now exited the program.");
 				exit = true;
+				scanner.close();
 				break;
 			}
 			try {
@@ -33,7 +34,6 @@ public class Main {
 			        toMetric = strLength[3];
 			      }
 			      convert(sourceNum, fromMetric, toMetric);
-			      scanner.close();	
 			} catch (Exception e) {
 				System.out.println("Something was inputted wrong, please try again.");
 			}
